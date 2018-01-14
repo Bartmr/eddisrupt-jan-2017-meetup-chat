@@ -1,0 +1,28 @@
+node_modules/
+dist/
+build/
+lib/
+.pm2/
+coverage/
+*.log
+
+# DO NOT IGNORE THE template.env FILE
+.env
+.env.*
+
+# IDE settings
+.vscode/
+
+# Unix
+._*
+.nfs*
+
+# Windows
+Desktop.ini
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# OSX
+.DS_Store
+.LSOverride

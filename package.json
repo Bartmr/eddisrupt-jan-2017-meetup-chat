@@ -1,0 +1,11 @@
+{
+  "name": "@eddisrupt/jan-2017-meetup-chat",
+  "version": "1.0.0",
+  "description": "Small chat project for Eddisrupt's January 2018 Meetup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bartolomeu Rodrigues",
+  "license": "ISC"
+}

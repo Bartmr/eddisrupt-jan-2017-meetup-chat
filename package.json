@@ -4,8 +4,13 @@
   "description": "Small chat project for Eddisrupt's January 2018 Meetup.",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Bartolomeu Rodrigues",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  }
 }

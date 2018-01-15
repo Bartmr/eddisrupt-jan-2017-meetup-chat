@@ -6,7 +6,7 @@ var socketIo = require('socket.io')
 /* ASSEMBLE AN EXPRESS APP TO SERVE STATIC FILES TO BROWSER */
 /* -------------------------------------------------------- */
 
-// Get an object representing our server from the package
+// Get an object representing our express app from the package
 var app = express()
 
 app.use(
@@ -15,6 +15,7 @@ app.use(
   express.static('static')
 )
 
+// Create an HTTP listener and inject the express app we created
 var httpServer = http.createServer(app)
 
 /* ------------------------------------- */
@@ -25,9 +26,22 @@ var io = socketIo(httpServer)
 io.on('connection', function(socket){
   console.log('a user connected')
 
+  /*
+    Now that we have an object representing a connection,
+    we can attach events to it
+  */
+
+  // When an user disconnects:
   socket.on('disconnect', function(){
     console.log('user disconnected')
   })
+
+  // When an user sends a message
+  socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
+
+    io.emit('chat message', msg)
+  });
 })
 
 /* ------------------------------------- */
